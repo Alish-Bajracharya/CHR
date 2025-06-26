@@ -1,0 +1,14 @@
+/* Example: Change the sidebar background color */
+.filament-sidebar {
+    background-color: #3e3e3e; /* Replace with your desired color */
+}
+
+/* Example: Change the sidebar item color */
+.filament-sidebar .filament-sidebar-menu-item {
+    color: white; /* Set text color for menu items */
+}
+
+/* Example: Change the hover effect for sidebar items */
+.filament-sidebar .filament-sidebar-menu-item:hover {
+    background-color: #ff5722; /* Set the hover color */
+}

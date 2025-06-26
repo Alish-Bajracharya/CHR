@@ -1,0 +1,337 @@
+/* general */
+.cf-container{
+	height: 800px;
+	position: relative;
+	overflow: hidden;
+}
+
+.cf-container .cf-source > img{
+	position: absolute;
+	opacity: 0;
+	-webkit-transition: all 1000ms ease;
+	-moz-transition: all 1000ms ease;
+	-ms-transition: all 1000ms ease;
+	-o-transition: all 1000ms ease;
+	transition: all 1000ms ease;
+}
+
+.cf-container .cf-source > video{
+	position: absolute;
+	opacity: 0;
+	-webkit-transition: all 1000ms ease;
+	-moz-transition: all 1000ms ease;
+	-ms-transition: all 1000ms ease;
+	-o-transition: all 1000ms ease;
+	transition: all 1000ms ease;
+}
+
+.cf-container .cf-source{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.cf-tabs{
+	display: flex;
+	height: 100%;
+}
+
+.cf-container .cf-tab{
+	background-color: rgba(0,0,0,0.5);
+	height: 100%;
+	z-index: 100;
+
+	display: flex;
+	flex-direction: column;
+
+	border-right: 1px solid rgba(255,255,255,0.4);
+
+	-webkit-flex: 1;  /* Safari 6.1+ */
+	-ms-flex: 1;  /* IE 10 */    
+	flex: 1;
+	-webkit-transition: all 1000ms ease;
+	-moz-transition: all 1000ms ease;
+	-ms-transition: all 1000ms ease;
+	-o-transition: all 1000ms ease;
+	transition: all 1000ms ease;
+}
+.cf-container .cf-tab:last-child{
+	border-right: none;
+}
+
+.cf-container .cf-tab:hover{
+	background-color: rgba(0,0,0,0.3);
+}
+.cf-container .cf-title-close{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  	height: 100%;
+}
+.cf-container .cf-link-close{
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.cf-container .cf-meta{
+	display: flex;
+	margin-top: 40px;
+}
+.cf-container .cf-meta > p{
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.cf-container .cf-close{
+	text-align: end;
+}
+
+/* all items closed */
+.cf-container .cf-close{
+	display: none;
+}
+.cf-container .cf-source .cf-default{
+	opacity: 1;
+}
+.cf-container .cf-default-close .cf-default{
+	opacity: 0;
+}
+.cf-container .cf-all-close .cf-title-close{
+	display: flex;
+}
+.cf-container .cf-all-close .cf-link-close{
+	display: flex;
+}
+.cf-container .cf-all-close .cf-meta > p{
+		-webkit-transform: rotate(0deg);
+	    -moz-transform: rotate(0deg);
+	    -o-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+	    transform: rotate(0deg);
+	    -webkit-transition: all 1000ms ease;
+		-moz-transition: all 1000ms ease;
+		-ms-transition: all 1000ms ease;
+		-o-transition: all 1000ms ease;
+		transition: all 1000ms ease;
+	}
+
+/* one active item */
+
+	/* closed items */
+
+	.cf-container .cf-title-close{
+		display: none;
+	}
+	.cf-container .cf-link-close{
+		display: none;
+	}
+	.cf-container .cf-meta > p{
+		-webkit-transform: rotate(90deg);
+	    -moz-transform: rotate(90deg);
+	    -o-transform: rotate(90deg);
+	    -ms-transform: rotate(90deg);
+	    transform: rotate(90deg);
+	    -webkit-transition: all 1000ms ease;
+		-moz-transition: all 1000ms ease;
+		-ms-transition: all 1000ms ease;
+		-o-transition: all 1000ms ease;
+		transition: all 1000ms ease;
+	}
+	.cf-container .cf-tabs .cf-item-open{
+		flex-direction: column;
+	  	justify-content: center;
+	  	visibility: hidden;
+	  	opacity: 0;
+	  	-webkit-transition: all 2000ms ease;
+		-moz-transition: all 2000ms ease;
+		-ms-transition: all 2000ms ease;
+		-o-transition: all 2000ms ease;
+		transition: all 2000ms ease;
+	}
+	.cf-container .cf-tabs .cf-open-meta{
+		display: none;
+	}
+
+	.cf-container .cf-tabs .cf-open-title{
+		display: none;
+	}
+
+	.cf-container .cf-tabs .content{
+		display: none;
+	}
+	.cf-container .cf-title-close{
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+	.cf-container .cf-link-close{
+		margin-bottom: 10%;
+	}
+
+	/* open item */
+	.cf-container .uk-active{
+		flex-grow: 5;
+	}
+	.cf-container .cf-tab .uk-active{
+		flex-grow: 10;
+	}
+	.cf-container .cf-tabs .uk-active .cf-close{
+		display: inherit;
+		margin-right: 10px;
+		margin-left: auto;
+		margin-top: 10px;
+ 	}
+ 	.cf-container .cf-tabs .uk-active .cf-item-open{
+		display: flex;
+		padding: 5%;
+		visibility: visible;
+		opacity: 1;
+		-webkit-transition: all 2000ms ease;
+		-moz-transition: all 2000ms ease;
+		-ms-transition: all 2000ms ease;
+		-o-transition: all 2000ms ease;
+		transition: all 2000ms ease;
+	}
+	.cf-container .cf-source .uk-active{
+		opacity: 1;
+	}
+	.cf-container .uk-active .cf-title-close{
+		display: none;
+	}
+	.cf-container .uk-active .cf-link-close{
+		display: none;
+	}
+	.cf-container .uk-active .cf-meta{
+		display: none;
+	}
+	.cf-container .cf-open-meta{
+		display: flex;
+	}
+	.cf-container .cf-open-meta > p{
+		margin-bottom: 0;
+		margin-top: 20px;
+		padding: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.cf-container .cf-open-title{
+		display: flex;
+	}
+	.cf-container .cf-tabs .uk-active .cf-open-meta{
+		display: inherit;
+	}
+
+	.cf-container .cf-tabs .uk-active .cf-open-title{
+		display: inherit;
+	}
+
+	.cf-container .cf-tabs .uk-active .content{
+		display: inherit;
+	}
+	.cf-container .cf-tabs .uk-active .cf-item-open{
+		height: 100%;
+	}
+
+
+/* mobile */
+
+.cf-mobile .cf-tabs{
+	flex-direction: column;
+	/*min-height: 600px;*/
+}
+.cf-mobile .cf-tab{
+	height: unset;
+	justify-content: center;
+
+	border-right: none;
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+.cf-mobile .cf-meta{
+	display: flex;
+	margin-top: 0px;
+}
+.cf-mobile .cf-all-close .cf-meta > p{
+	margin-bottom: 0px;
+}
+.cf-mobile .cf-meta > p{
+	margin-left: 10px;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.cf-mobile .cf-title-close{
+	margin-left: 10px;
+	margin-right: unset;
+	margin-bottom: 20px;
+	flex-direction: initial;
+	height: unset;
+}
+.cf-mobile .cf-link-close{
+	margin-left: 10px;
+	margin-right: unset;
+	margin-bottom: 20px;
+	flex-direction: initial;
+	height: unset;
+}
+.cf-mobile .cf-title{
+	margin-bottom: 0px;
+}
+.cf-mobile .cf-tab .uk-icon{
+	display: flex;
+	margin-left: auto;
+	margin-right: 20px;
+	height: 100%;
+}
+.cf-mobile .cf-close .uk-icon{
+	margin-right: 0px;
+}
+.cf-mobile .cf-tabs .uk-active .cf-item-open{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
