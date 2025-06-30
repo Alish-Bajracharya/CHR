@@ -1,23 +1,23 @@
 @extends('frontend.layouts.master')
 @section('content')
-
- <div class="about-container"></div>
      
-<div class="container mx-auto">
-  <div class="py-3 pe-5 about-head">
-    <h2 class="text-center">Champadevi Hillside Resort</h2>
-    <div class="divider mx-auto" style="background-color: #025e5b; width: 290px; height: 5px;"></div>
+<div class="container mx-auto px-3">
+    <div class="about-container mb-4"></div>
 
-    <div class="two-column-text px-2 px-md-5 ">
-      {!! $aboutUs->long_description !!}
+    <div class="py-3 about-head">
+        <h2 class="text-center">Champadevi Hillside Resort</h2>
+        <div class="divider mx-auto" style="background-color: #025e5b; width: 290px; height: 5px;"></div>
+
+        <div class="two-column-text px-md-5">
+            {!! $aboutUs->long_description !!}
+        </div>
     </div>
-  </div>
 </div>
 
 
-<style>
 
-.about-container {
+<style>
+  .about-container {
     height: 800px;
     background-image: url('{{ asset('storage/'.$aboutUs->feature_image) }}');
     background-position: center;
@@ -26,52 +26,64 @@
     background-attachment: fixed;
   }
 
- 
   @media (max-width: 768px) {
-    .about-container {
-      background-attachment: scroll; 
-      height: auto;
-      min-height: 60vh;
-    }
+      .about-container {
+          background-attachment: scroll;
+          height: auto;
+          min-height: 60vh;
+      }
   }
 
+  .two-column-text {
+      column-count: 2;
+      column-gap: 70px;
+      text-align: justify;
+  }
 
+  @media (max-width: 768px) {
+      .two-column-text {
+          column-count: 1;
+          column-gap: 0;
+      }
+  }
 
-        #demo {
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
+  #demo {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+  }
 
-        .green {
-            background-color: #6fb936;
-        }
-        .thumb {
-            margin-bottom: 30px;
-        }
-        /* .page-top {
-            margin-top: 85px;
-        } */
-        img.zoom {
-            width: 100%;
-            height: 200px;
-            border-radius: 5px;
-            object-fit: cover;
-            transition: all .3s ease-in-out;
-        }
-        .transition {
-            transform: scale(1.2);
-        }
-        .modal-header {
-            border-bottom: none;
-        }
-        .modal-title {
-            color: #000;
-        }
-        .modal-footer {
-            display: none;
-        }
-        .about-head{padding-top:40px !important;}
+  .green {
+      background-color: #6fb936;
+  }
+  .thumb {
+      margin-bottom: 30px;
+  }
+  /* .page-top {
+      margin-top: 85px;
+  } */
+  img.zoom {
+      width: 100%;
+      height: 200px;
+      border-radius: 5px;
+      object-fit: cover;
+      transition: all .3s ease-in-out;
+  }
+  .transition {
+      transform: scale(1.2);
+  }
+  .modal-header {
+      border-bottom: none;
+  }
+  .modal-title {
+      color: #000;
+  }
+  .modal-footer {
+      display: none;
+  }
+  .about-head{padding-top:40px !important;}
+ */
+
     </style>
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -125,7 +137,6 @@
             });
         });
     </script>
-</div>
 
 
 
@@ -200,7 +211,7 @@
       }
 
 
-      setInterval(nextSlide, 2000);
+      setInterval(nextSlide, 5000);
     });
   </script>
 

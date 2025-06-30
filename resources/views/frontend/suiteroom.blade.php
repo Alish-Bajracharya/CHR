@@ -79,7 +79,7 @@
         <div class="col-lg-8 col-md-10 col-sm-12">
           <div class=" text-center">
            <h2> {{ $room->name }}</h2>
-            <p class=" text-muted">
+            <p class=" text-muted justify-center">
               All of our rooms & suites provide guests with the option to enjoy accommodations with impressive views of the extensive greenery of the Hattiban Forest and south lalitpur. Admire one of best get a glimpse of how the royals lived with a view of the central overseeing. Resort offers spaciously professionally designed accommodation features great accessibility to modern day comfort luxury. The rooms are wonderful mix of new-age charm and conveniences and promises to give its guests an unparalleled experience.
              </p>
           </div>
@@ -98,17 +98,6 @@
     background-color: #6fb936;
 }
 
-
-img.zoom {
-    width: 100%;
-   
-  
-    object-fit: cover;
-    transition: all .3s ease-in-out;
-}
-.transition {
-    transform: scale(1.2);
-}
 .modal-header {
     border-bottom: none;
 }
@@ -126,54 +115,57 @@ img.zoom {
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 <style>
-  .thumb img {
+  /* .thumb img {
     width: 100%;
     height: 300px !important;
     object-fit: cover;
    
+  } */
+     img.zoom {
+      width: 100%;
+      height: 200px;
+      border-radius: 5px;
+      object-fit: cover;
+      transition: all .3s ease-in-out;
+  }
+  .transition {
+      transform: scale(1.2);
   }
    @media (min-width: 768px) {
     .custom-ratio {
       --bs-aspect-ratio: 40%; 
     }
    }
-
-  
 </style>
 
-<div class="container mx-auto p-1">
-  <div class="row g-1"> <!-- Smaller gap (g-1) -->
-    @foreach ($room->images as $index => $image)
-      <div class="col-4 col-md-3 col-lg-4"> <!-- More columns = smaller images -->
-        <div class="ratio  custom-ratio" style="--bs-aspect-ratio: 50%;"> <!-- 2:1 ratio (half height) -->
-          <a href="{{ asset('storage/'.$image) }}" class="fancybox d-block h-100 w-100" rel="lightbox">
-            <img 
-              src="{{ asset('storage/'.$image) }}" 
-              class="w-100 h-100 object-fit-cover" 
-              style="display: block;"
-              alt=""
-            >
-          </a>
+<div class="container page-top py-4">
+        <div class="row pe-4">
+            @foreach($room->images as $index => $image)
+            <div class="col-lg-4 col-md-5 col-xs-6 thumb">
+                <a href="{{ asset('storage/'.$image) }}" class="fancybox" rel="ligthbox">
+                    <img src="{{ asset('storage/'.$image) }}" class="zoom img-fluid" alt="">
+                </a>
+            </div>
+            @endforeach
         </div>
-      </div>
-    @endforeach
-  </div>
-</div>
+    </div>
 
-<script>
-$(document).ready(function(){
-    $(".fancybox").fancybox({
-        openEffect: "none",
-        closeEffect: "none"
-    });
-    $(".zoom").hover(function(){
-        $(this).addClass('transition');
-    }, function(){
-        $(this).removeClass('transition');
-    });
-});
-</script>
-</div>
+    <script>
+        $(document).ready(function(){
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none"
+            });
+            $(".zoom").hover(function(){
+                $(this).addClass('transition');
+            }, function(){
+                $(this).removeClass('transition');
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 
 
@@ -207,9 +199,10 @@ $(document).ready(function(){
         <div class="col-lg-7">
             <p class="text-muted fs-6 m-0">Champadevi Hillside Resort</p>
             <h3 class="fw-bold m-0 text-color">The Pinnacle of Comfort</h3>
-            <p class="text-muted  pe-4 ">
+            <p class="text-muted pe-4" style="text-align: justify; padding: 10px 0px;">
                 {{ $room->description }}
             </p>
+
             <a href="https://archiesoftbook.chr.com.np/"><button id="myBtn1">Book Now</button></a>
         </div>
 

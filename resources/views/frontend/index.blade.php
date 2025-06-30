@@ -3,8 +3,7 @@
 
 
         <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         
 
@@ -189,7 +188,18 @@
 
         .explor_text {
           padding: 20px;
+          padding-left: 30px;
         }
+
+        .details {
+          --bs-text-opacity: 1;
+          color: #025E5B;
+          border-radius: 10px;
+          font-size: small;
+          padding-right: 80px; /* ✅ Align with description */
+          transition: all 0.3s ease;
+        }
+
 
         .explor_footer a {
           transition: all 0.3s ease;
@@ -211,6 +221,7 @@
           max-height: 6em; /* ~4 lines */
           text-align: justify;
           transition: max-height 0.4s ease;
+          padding-right: 50px;
         }
 
         .room-description.expanded {
@@ -221,17 +232,12 @@
             --bs-text-opacity: 1;
             color: rgb(233 110 0) !important;
         }
-        .details {
-            --bs-text-opacity: 1;
-            color: #025E5B;
-            border-radius: 10px;
-            font-size: small;
-        }
 
         .footer {
             margin-top: 10px;
             font-size: 12px;
             color: #7f8c8d;
+            
         }
 
         .py-5 {
@@ -492,7 +498,7 @@
             <div class="notice-content">
                 <p>Dear Valued Guests,</p>
                 <div class="important">
-                    <p><strong>Please note:</strong> Champadevi Hill Side Resort is currently <strong>not accepting online bookings through our OTA platforms</strong>.</p>
+                    <p><strong >Please note:</strong> Champadevi Hill Side Resort is currently <strong>not accepting online bookings through our OTA platforms</strong>.</p>
                     <p>Any reservations attempted through our OTA Platforms will not be processed.</p>
                 </div>
                 <p>We apologize for any inconvenience this may cause and appreciate your understanding as we upgrade our booking systems to better serve you.</p>
@@ -928,12 +934,12 @@
 
             <!-- Footer -->
             <div class="explor_footer d-flex justify-content-between align-items-center mt-3">
-              <h4 style="color: #025E5B; font-family: 'Rubik', sans-serif; font-weight: 700; font-size: 24px;">
+              <h4 style="color: #025E5B; font-family: 'Work Sans', sans-serif; font-weight: 700; font-size: 24px;">
                 ${{ $room->price }}
                 <span style="font-size: 14px; font-weight: 400; color: #777;">/ Night</span>
               </h4>
-              <a class="fw-bold details" href="{{ route('room.detail', $room->id) }}">
-                View Details →
+              <a class="fw-bold details" style="margin-right: 50px;" href="{{ route('room.detail', $room->id) }}">
+                  View Details →
               </a>
             </div>
           </div>
@@ -1041,7 +1047,7 @@
 .py-5 {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
-  background-color: #F1F1F1;
+
 }
 
       .explore-card {
@@ -1350,11 +1356,17 @@ $exclusiveOffers = App\Models\ExclusiveOffer::all();
         }
 
         .testimonial-card {
-            background-color: #fff;
-            padding: 2.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+          background-color: #fff;
+          padding: 2.5rem;
+          border-radius: 1rem;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          min-height: 500px; /* Ensures consistent height */
+          height: 100%;
         }
+
 
         .testimonial-text {
             font-size: 1.1rem;
@@ -1396,7 +1408,7 @@ $exclusiveOffers = App\Models\ExclusiveOffer::all();
 
         .carousel-btn {
             background-color: #025E5B;
-            color: #fff;
+            color: #f18e25;
             border: none;
             padding: 0.6rem 1.5rem;
             border-radius: 0.5rem;
@@ -1412,6 +1424,12 @@ $exclusiveOffers = App\Models\ExclusiveOffer::all();
             from { opacity: 0; transform: scale(0.8); }
             to { opacity: 1; transform: scale(1); }
         }
+        @media (max-width: 768px) {
+          .testimonial-card {
+            min-height: auto;
+          }
+        }
+
     </style>
 
     <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -1496,132 +1514,125 @@ $exclusiveOffers = App\Models\ExclusiveOffer::all();
 
 
 
-
-
-
-
-<!-- Contact Information -->
-<div class="container my-5">
-  <div class="row gx-1 align-items-start">
-    <!-- Left Side: Map -->
-    <div class="col-md-7">
-      <div class="map-container rounded overflow-hidden shadow-sm">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.92831830796!2d85.28366907613909!3d27.626736629040952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb175f378db0a7%3A0x83c860a894a3ca33!2sChampadevi%20Hillside%20Resort%20Pvt.Ltd%20(Sunrise%20Hotel%20%26%20Resort%20Pvt.%20Ltd.)!5e0!3m2!1sen!2snp!4v1734433450920!5m2!1sen!2snp"
-          width="100%" height="350" style="border: 0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- Contact Information -->
+  <div class="container my-5">
+    <div class="row gx-3 align-items-stretch" style="min-height: 100%;">
+      <!-- Left Side: Map -->
+      <div class="col-lg-7 col-md-6 d-flex">
+        <div class="map-container rounded overflow-hidden shadow-sm w-100 h-100">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.92831830796!2d85.28366907613909!3d27.626736629040952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb175f378db0a7%3A0x83c860a894a3ca33!2sChampadevi%20Hillside%20Resort%20Pvt.Ltd%20(Sunrise%20Hotel%20%26%20Resort%20Pvt.%20Ltd.)!5e0!3m2!1sen!2snp!4v1734433450920!5m2!1sen!2snp"
+            width="100%" height="100%" style="border: 0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
-    </div>
 
-    <!-- Right Side: Contact Info -->
-    <div class="col-md-5">
-      <div class="contact-info p-4 rounded shadow-sm bg-white h-100 d-flex flex-column justify-content-between">
-        <style>
-          .contact-info {
-            font-size: 16px;
-            color: #333;
-            border: #2c3e50;
-          }
+      <!-- Right Side: Contact Info -->
+      <div class="col-lg-5 col-md-6 d-flex">
+        <div class="contact-info p-4 rounded shadow-sm bg-white w-100 d-flex flex-column justify-content-between">
+          <style>
+            .contact-info {
+              font-size: 16px;
+              color: #333;
+              border: #2c3e50;
 
-          .contact-info h4,
-          .contact-info h3 {
-            color: #025E5B;
-          }
+            }
 
-          .contact-info h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-          }
+            .contact-info h4,
+            .contact-info h3 {
+              color: #025E5B;
+            }
 
-          .contact-info h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-          }
+            .contact-info h3 {
+              font-size: 1.5rem;
+              font-weight: 700;
+            }
 
-          .contact-info a {
-            color: #025E5B;
-            text-decoration: none;
-          }
+            .contact-info h4 {
+              font-size: 1.1rem;
+              font-weight: 600;
+              margin-bottom: 0.25rem;
+            }
 
-          .contact-info a:hover {
-            color: #f18e25;
-          }
+            .contact-info a {
+              color: #025E5B;
+              text-decoration: none;
+            }
 
-          .logos {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: 1rem;
-            align-items: center;
-            margin-top: 0.5rem;
-            overflow: auto;
-          }
+            .contact-info a:hover {
+              color: #f18e25;
+            }
 
-          .logos img {
-            max-height: 45px;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-          }
-
-          .logos img:hover {
-            transform: scale(1.05);
-          }
-
-          .map-container iframe {
-            width: 100%;
-            height: 350px;
-          }
-
-          @media (max-width: 768px) {
             .logos {
+              display: flex;
+              gap: 1rem;
+              align-items: center;
+              margin-top: 0.5rem;
               flex-wrap: wrap;
-              justify-content: center;
+              justify-content: flex-start;
+              padding-left: 20px;
+            }
+
+            .logos img {
+              max-height: 45px;
+              object-fit: contain;
+              transition: transform 0.3s ease;
+            }
+
+            .logos img:hover {
+              transform: scale(1.05);
+            }
+
+            @media (max-width: 768px) {
+              .logos {
+                justify-content: center;
+              }
+
+              .contact-info {
+                text-align: center;
+                margin-top: 1rem;
+              }
+
+              .map-container iframe {
+                height: 300px;
+              }
             }
 
             .map-container iframe {
-              height: 300px;
+              width: 100%;
+              height: 100%;
+              min-height: 100%;
             }
+          </style>
 
-            .contact-info {
-              text-align: center;
-            }
-          }
-        </style>
+          <div>
+            <p class="text-muted small mb-1">INFORMATION</p>
+            <h4>Contact Us</h4>
+            <h3>Champadevi Hillside Resort</h3>
+            <p class="mb-3">Bansbari-04, Dakshinkali Municipality<br>Kathmandu, Nepal</p>
 
-        <div>
-          <p class="text-muted small mb-1">INFORMATION</p>
-          <h4>Contact Us</h4>
-          <h3>Champadevi Hillside Resort</h3>
-          <p class="mb-3">Bansbari-04, Dakshinkali Municipality<br>Kathmandu, Nepal</p>
+            <p class="mb-2"><strong>Phone:</strong><br> +977-01-5922050</p>
 
-          <p class="mb-2"><strong>Phone:</strong><br> +977-01-5922050</p>
+            <p class="mb-2"><strong>Email:</strong><br>
+              <a href="mailto:info@chr.com.np">info@chr.com.np</a><br>
+              <a href="mailto:reservation@chr.com.np">reservation@chr.com.np</a>
+            </p>
+          </div>
 
-          <p class="mb-2"><strong>Email:</strong><br>
-            <a href="mailto:info@chr.com.np">info@chr.com.np</a><br>
-            <a href="mailto:champadevihillside@gmail.com">champadevihillside@gmail.com</a><br>
-            <a href="mailto:reservation@chr.com.np">reservation@chr.com.np</a>
-          </p>
-        </div>
-
-        <!-- Logos (in same line) -->
-        <div class="logos mt-2">
-          <img src="{{asset('assets/images/agoda-removebg-preview.png')}}" alt="Agoda" />
-          <img src="{{asset('assets/images/images-removebg-preview.png')}}" alt="Expedia" />
-          <img src="{{asset('assets/images/booking.png')}}" alt="Booking.com" />
-          <img src="{{asset('assets/images/Tripadvisor-Logo-removebg-preview.png')}}" alt="Tripadvisor" />
+          <!-- Logos -->
+          <div class="logos mt-2">
+            <img src="{{asset('assets/images/agoda-removebg-preview.png')}}" alt="Agoda" />
+            <img src="{{asset('assets/images/images-removebg-preview.png')}}" alt="Expedia" />
+            <img src="{{asset('assets/images/booking.png')}}" alt="Booking.com" />
+            <img src="{{asset('assets/images/Tripadvisor-Logo-removebg-preview.png')}}" alt="Tripadvisor" />
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
 
   </main>
-
-
-
-  </div>
-
-  
 
 
 

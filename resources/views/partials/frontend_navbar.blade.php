@@ -737,7 +737,7 @@
 
         <!-- Book Now Button (always visible) -->
         <a href="https://archiesoftbook.chr.com.np/" 
-            class="book-now-btn d-none d-lg-inline-flex">
+            class="book-now-btn d-none d-lg-inline-flex" target="_blank">
             Book Now <span uk-icon="icon: chevron-right"></span>
         </a>
       </div>
@@ -804,7 +804,7 @@
                     <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                 </li>
                 <div class="mt-2 text-center d-lg-none">
-                    <a href="https://archiesoftbook.chr.com.np/" class="book-now-btn">
+                    <a href="https://archiesoftbook.chr.com.np/" class="book-now-btn" target="_blank">
                         Book Now <span uk-icon="icon: chevron-right"></span>
                     </a>
                 </div>
